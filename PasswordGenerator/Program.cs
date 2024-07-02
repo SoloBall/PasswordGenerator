@@ -113,14 +113,14 @@ public class PasswordGenerator
                     }
                 }
             }
-            if (tempPassword.Length < length)
+            if (tempPassword.Length < length) // add random characters if desired length is longer
             {
                 while (tempPassword.Length != length)
                 {
                     tempPassword += (char)rand.Next(33, 127);
                 }
             }
-            else if (tempPassword.Length > length)
+            else if (tempPassword.Length > length) // remove random characters if desired length is shorter
             {
                 List<char> chars = tempPassword.ToList();
                 for (int i = length; i < chars.Count();)
